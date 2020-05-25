@@ -3,14 +3,18 @@ package sample;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
+import java.util.Random;
+
 public class Settings
 {
+
+
     // Canvas / Window Settings
     public static double CANVAS_WIDTH;
     public static double CANVAS_HEIGHT;
 
     // Enemies
-    public static int MAX_ENEMY_COUNT = 1;
+    public static int MAX_ENEMY_COUNT = 10;
     public static int ENEMY_SIZE = 100;
     public static int ENEMY_SPEED_MULTIPLIER = 2;
 
@@ -18,7 +22,7 @@ public class Settings
     public static int PLAYER_SIZE = 60;
     public static int PLAYER_SPEED_HORIZONTAL = 20;
     public static int PLAYER_MISSILE_SPEED = 20;
-    public static int MAX_MISSILES_ONSCREEN = MAX_ENEMY_COUNT * 2;
+    public static int MAX_MISSILES_ONSCREEN = (MAX_ENEMY_COUNT * 2) + 10;
 
 
 

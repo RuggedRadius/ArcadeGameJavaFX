@@ -3,7 +3,9 @@ package sample;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-public class PlayerShip extends SpaceShip {
+public class PlayerShip extends SpaceShip
+{
+    boolean shieldEngaged = true;
 
     // Constructor
     public PlayerShip(GraphicsContext _gc, int _posX, int _posY, int _size, Image _img)

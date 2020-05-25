@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 
 import static sample.SpaceInvaders.*;
@@ -43,7 +44,8 @@ public class SpaceShip
         // SFX
         // ... TO DO
 
-        return new Missile(gc,posX+size / 2 - Missile.size / 2, posY - Missile.size);
+
+       return new Missile(gc,posX+size / 2 - Missile.size / 2, posY - Missile.size);
     }
 
     public void update()

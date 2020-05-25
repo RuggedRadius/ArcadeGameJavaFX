@@ -19,6 +19,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.RadialGradient;
+import javafx.scene.paint.Stop;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -56,6 +59,10 @@ public class SpaceInvaders extends Application
     Canvas gameCanvas;
     MediaPlayer musicPlayer;
 
+
+    boolean movingLeft;
+    boolean movingRight;
+
     // General
     @Override
     public void start(Stage stage) throws Exception {
@@ -89,8 +96,83 @@ public class SpaceInvaders extends Application
         // Add input handlers to canvas
         gameCanvas.setCursor(Cursor.MOVE);
         gameCanvas.setOnMouseMoved(e -> { mouseX = e.getX(); });
-        gameCanvas.setOnKeyPressed(e -> { handleInputKeys(e); });
+        gameCanvas.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.LEFT && !movingLeft)
+            {
+
+                // Lambda Runnable
+                Runnable moveLeftRun = () -> {
+                    movingRight = true;
+                    while (movingRight)
+                    {
+                        player.posX -= 1;
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                };
+                new Thread(moveLeftRun).start();
+
+
+//                player.posX -= Settings.PLAYER_SPEED_HORIZONTAL;
+            }
+            if (e.getCode() == KeyCode.RIGHT && !movingRight)
+            {
+
+                // Lambda Runnable
+                Runnable moveRightRun = () -> {
+                    movingRight = true;
+                    while (movingRight)
+                    {
+                        player.posX += 1;
+
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                };
+                new Thread(moveRightRun).start();
+
+
+
+
+//                player.posX += Settings.PLAYER_SPEED_HORIZONTAL;
+            }
+            if (e.getCode() == KeyCode.SPACE)
+            {
+                if(missiles.size() < MAX_MISSILES_ONSCREEN)
+                {
+                    missiles.add(player.shoot());
+                }
+            }
+            if (gameOver)
+            {
+                if (e.getCode() == KeyCode.ENTER) {
+                    System.out.println("Enter pressed.");
+                    gameOver = false;
+                    gameOverPrinted = false;
+                    setup();
+                }
+            } });
+        gameCanvas.setOnKeyReleased(e -> {
+            if (e.getCode() == KeyCode.LEFT) {
+                movingLeft = false;
+                movingRight = false;
+            }
+
+            if (e.getCode() == KeyCode.RIGHT)
+            {
+                movingRight = false;
+                movingLeft = false;
+            }
+
+        });
         gameCanvas.setOnMouseClicked(e -> { handleMouseClick(e); });
+
 
         // Set up game canvas
         setup();
@@ -121,6 +203,18 @@ public class SpaceInvaders extends Application
         score = 0;
 
         IntStream.range(0, MAX_ENEMY_COUNT).mapToObj(i -> this.newEnemy()).forEach(enemyShips::add);
+
+        // Lambda Runnable
+        Runnable pressEnterText = () -> {
+            player.shieldEngaged = true;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            player.shieldEngaged = false;
+        };
+        new Thread(pressEnterText).start();
     }
     public static void main(String[] args) {
 
@@ -193,7 +287,33 @@ public class SpaceInvaders extends Application
 
             player.update();
             player.draw();
+
+            if (player.shieldEngaged)
+            {
+                // Random
+                RadialGradient gradient1 = new RadialGradient(
+                        0,
+                        0, //0.1
+                        0.5,
+                        0.5,
+                        1,
+                        true,
+                        CycleMethod.REPEAT,
+                        new Stop[] {
+                                new Stop(0, Color.TRANSPARENT),
+                                new Stop(1, Color.GREEN),
+                                new Stop(2, Color.TRANSPARENT)
+                        });
+
+                gc.setFill(gradient1);
+                int shieldRadius = 100;
+                gc.fillOval(player.posX - 20, player.posY - 20, shieldRadius, shieldRadius);
+            }
+
+
 //            player.posX = (int) mouseX;
+
+
             clampPlayerBounds();
 
             // Check player is alive
@@ -201,24 +321,36 @@ public class SpaceInvaders extends Application
             {
                 if (player.collide(e) && !player.exploding)
                 {
-                    // Player Death
-                    player.explode();
+                    if (player.shieldEngaged)
+                    {
+                        // Explode ship instead
+                        e.explode();
+                    }
+                    else
+                    {
+                        // Player Death
+                        player.explode();
+                    }
                 }
             });
 
-            for (int i = missiles.size() - 1; i >=0 ; i--) {
-                Missile shot = missiles.get(i);
-                if(shot.posY < 0 || shot.toRemove)  {
+            for (int i = missiles.size() - 1; i >=0 ; i--)
+            {
+                Missile missile = missiles.get(i);
+                if(missile.posY < 0 || missile.toRemove)
+                {
                     missiles.remove(i);
                     continue;
                 }
-                shot.update();
-                shot.draw();
-                for (EnemyShip bomb : enemyShips) {
-                    if(shot.collide(bomb) && !bomb.exploding) {
-                        score += bomb.scoreValue;
-                        bomb.explode();
-                        shot.toRemove = true;
+                missile.update();
+                missile.draw();
+                for (EnemyShip enemy : enemyShips)
+                {
+                    if(missile.collide(enemy) && !enemy.exploding)
+                    {
+                        score += enemy.scoreValue;
+                        enemy.explode();
+                        missile.toRemove = true;
                     }
                 }
             }
@@ -234,6 +366,8 @@ public class SpaceInvaders extends Application
             }
 
             gameOver = player.destroyed;
+
+
             if(randyMcRando.nextInt(10) > 2) {
                 univ.add(new Star(gc));
             }
@@ -247,13 +381,20 @@ public class SpaceInvaders extends Application
         lblScore.setText(String.valueOf(score));
         gameCanvas.requestFocus();
     }
+    private void drawBlackScreen()
+    {
+        // Paint black base
+        gc.setFill(Color.BLACK);
+        gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    }
     private void printGameOver() {
         System.out.println("Printing game over..");
-        Runnable gameOverText = () -> {
 
-            // Paint black base
-            gc.setFill(Color.BLACK);
-            gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        Runnable gameOverText = () -> {
+            gameOverPrinted = true;
+            // Draw blank black screen
+//            drawBlackScreen();
 
             // FX
             // .. Vignette maybe?
@@ -264,34 +405,57 @@ public class SpaceInvaders extends Application
 
             // Print "Game Over"
             Runnable printGameOverText = () -> {
-                int startPos = (int) (CANVAS_HEIGHT / 2);
-                int fontSize = 30;
-                int initR = 0;
-                int initG = 55;
-                int initB = 255;
 
-                for (int i = 0; i < 5; i++) {
+
+                for (int i = 0; i < 1; i++)
+                {
+                    int startPos = (int) (CANVAS_HEIGHT / 2);
+                    int fontSize = 30;
+                    int initR = 0;
+                    int initG = 0;
+                    int initB = 255;
+
+                    for (int j = 0; j < 5; j++)
+                    {
+                        gc.setFont(Font.font(fontSize));
+                        gc.setFill(Color.rgb(initR, initG, initB));
+                        gc.fillText("Game Over", CANVAS_WIDTH / 2, startPos);
+
+                        initG += 25;
+                        fontSize += 8;
+                        startPos -= (i * 5) + 25;
+
+                        try
+                        {
+                            Thread.sleep(100);
+                        }
+                        catch (InterruptedException e)
+                        {
+                            e.printStackTrace();
+                        }
+
+                        drawBlackScreen();
+
+                    }
                     gc.setFont(Font.font(fontSize));
                     gc.setFill(Color.rgb(initR, initG, initB));
                     gc.fillText("Game Over", CANVAS_WIDTH / 2, startPos);
 
-                    initG += 50;
-                    fontSize += 8;
-                    startPos -= (i * 5) + 25;
-
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
+
+
             };
             new Thread(printGameOverText).start();
 
 
             try
             {
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             }
             catch (InterruptedException e)
             {
@@ -304,27 +468,28 @@ public class SpaceInvaders extends Application
                 gc.setFont(Font.font(20));
 
                 while (gameOver) {
-                    gc.setFill(Color.GREEN);
+                    gc.setFill(Color.rgb(0, 125, 255));
                     gc.setFont(Font.font(20));
                     gc.fillText("Press <ENTER> to play again...", CANVAS_WIDTH / 2, (CANVAS_HEIGHT / 2) + 250);
 
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {}
 
                     gc.setFill(Color.BLACK);
                     gc.setFont(Font.font(20));
                     gc.fillText("Press <ENTER> to play again...", CANVAS_WIDTH / 2, (CANVAS_HEIGHT / 2) + 250);
+
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {}
                 }
 
             };
             new Thread(pressEnterText).start();
 
-            gameOverPrinted = true;
         };
-        if (!gameOverPrinted) {
-            new Thread(gameOverText).start();
-        }
+        new Thread(gameOverText).start();
 
     }
 
