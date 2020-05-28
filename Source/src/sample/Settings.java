@@ -32,10 +32,10 @@ public class Settings
 
 
     // Images
-    public static final Image PLAYER_IMG = new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/data/spaceship.png");
-    public static final Image EXPLOSION_IMG = new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/data/X_plosion/PNG/frame0019.png");
+    public static final Image PLAYER_IMG = new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/spaceship.png");
+    public static final Image EXPLOSION_IMG = new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/X_plosion/PNG/frame0019.png");
     public static final Image BOMBS_IMG[] = {
-            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/data/pepe.png")
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/pepe.png")
     };
 
     // Explosions
