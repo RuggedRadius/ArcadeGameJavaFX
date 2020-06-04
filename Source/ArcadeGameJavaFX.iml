@@ -9,5 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="javafx-swt" level="project" />
+    <orderEntry type="library" name="jlayer-1.0.1" level="project" />
+    <orderEntry type="library" name="commons-io-2.7" level="project" />
   </component>
 </module>
