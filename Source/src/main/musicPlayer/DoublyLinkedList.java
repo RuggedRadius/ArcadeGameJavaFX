@@ -1,4 +1,7 @@
-package main;
+package main.musicPlayer;
+
+import java.io.File;
+import java.util.ArrayList;
 
 public class DoublyLinkedList
 {
@@ -7,9 +10,9 @@ public class DoublyLinkedList
     public Node root;
     public Node currentNode;
 
-    public DoublyLinkedList(Node _node)
-    {
+    public DoublyLinkedList(Node _node) {
         root = _node;
+        currentNode = root;
     }
 
     public void addLast(Node _node) {
@@ -36,21 +39,27 @@ public class DoublyLinkedList
     public Node getNext() {
         return currentNode.next;
     }
-    public void getPrevious() {}
+    public Node getPrevious()  {
+        return currentNode.previous;
+    }
 
     public Node getFirst() {
         return root;
     }
     public void getLast() {}
 
-    public void testTraverse()
+    public String[] traverseFilenames()
     {
+        ArrayList<String> filenames = new ArrayList<String>();
+
         Node current = root;
 
-        while (current.next != null)
+        while (current != null)
         {
-            System.out.println(current.playerName + " - " + current.score);
+            filenames.add(current.fileName);
             current = current.next;
         }
+
+        return filenames.toArray(new String[filenames.size()]);
     }
 }

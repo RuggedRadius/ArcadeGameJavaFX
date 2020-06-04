@@ -20,8 +20,36 @@
                                 <Label text="High Scores" />
                                 <ListView prefHeight="200.0" prefWidth="200.0" />
                                 <Separator prefWidth="200.0" />
-                                <Label text="Controls" />
-                        <ListView fx:id="lstPlaylist" prefHeight="200.0" prefWidth="200.0" />
+                                <Label text="Playlist" />
+                        <VBox>
+                           <children>
+                              <ListView fx:id="lstPlaylist" prefHeight="200.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#musicPlay" text="►">
+                                       <font>
+                                          <Font name="Stencil" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicStop" text="■">
+                                       <font>
+                                          <Font name="Stencil" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicPrevious" text="|◄◄">
+                                       <font>
+                                          <Font name="Stencil" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicNext" text="►►|">
+                                       <font>
+                                          <Font name="Stencil" size="19.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                             </children></VBox>
                     </children>
                 </AnchorPane>
