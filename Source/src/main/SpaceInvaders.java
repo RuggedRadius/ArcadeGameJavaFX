@@ -12,6 +12,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -47,6 +48,11 @@ public class SpaceInvaders extends Application
     @FXML public Label lblScore;
     @FXML public ListView lstPlaylist;
 
+    @FXML public Button btnPlay;
+    @FXML public Button btnStop;
+    @FXML public Button btnNext;
+    @FXML public Button btnPrevious;
+
     // Variables
     boolean gameOver = false;
     boolean gameOverPrinted = false;
@@ -78,6 +84,10 @@ public class SpaceInvaders extends Application
     @Override
     public void start(Stage stage) throws Exception {
         System.out.println("Initialising game...");
+
+        // Background Music
+        System.out.println("Starting background music...");
+        musicPlayer = new MusicPlayer(this);
 
         // Load scene from FXML file
         this.stage = stage;
@@ -207,9 +217,7 @@ public class SpaceInvaders extends Application
         // Add canvas to window
         targetFrame.getChildren().add(gameCanvas);
 
-        // Background Music
-        System.out.println("Starting background music...");
-        musicPlayer = new MusicPlayer(this);
+
 
         // Populate playlist list view
         String[] musicFiles = musicPlayer.playlist.traverseFilenames();
@@ -278,12 +286,19 @@ public class SpaceInvaders extends Application
         musicPlayer.stop();
     }
 
-    @FXML public void musicPlay() { musicPlayer.play(); }
-    @FXML public void musicStop() { musicPlayer.stop(); }
+    @FXML public void musicPlay() {
+        System.out.println("PLAY Clicked");
+        musicPlayer.play();
+    }
+    @FXML public void musicStop() {
+        System.out.println("STOP Clicked");
+        musicPlayer.stop(); }
     @FXML public void musicNext() {
-        System.out.println("Next clicked");
+        System.out.println("NEXT Clicked");
         musicPlayer.next(); }
-    @FXML public void musicPrevious() { musicPlayer.previous(); }
+    @FXML public void musicPrevious() {
+        System.out.println("PREVIOUS Clicked");
+        musicPlayer.previous(); }
 
 
 

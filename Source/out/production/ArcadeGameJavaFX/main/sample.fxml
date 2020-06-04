@@ -31,7 +31,7 @@
                                           <Font name="Stencil" size="19.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicStop" text="■">
+                                    <Button fx:id="btnStop" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicStop" text="■">
                                        <font>
                                           <Font name="Stencil" size="19.0" />
                                        </font>
@@ -41,7 +41,7 @@
                                           <Font name="Stencil" size="19.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicNext" text="►►|">
+                                    <Button fx:id="btnNext" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onAction="#musicNext" text="►►|">
                                        <font>
                                           <Font name="Stencil" size="19.0" />
                                        </font>
