@@ -57,8 +57,10 @@ public class MusicPlayer
             fileInputStream.close();
             bufferedInputStream.close();
 
-            playThread.interrupt();
-            playThread = null;
+            if (playThread != null) {
+                playThread.interrupt();
+                playThread = null;
+            }
         }
         catch (IOException e) {
             e.printStackTrace();

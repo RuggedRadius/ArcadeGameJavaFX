@@ -244,7 +244,7 @@ public class SpaceInvaders extends Application
         btnSortScore.setFocusTraversable(false);
         btnStop.setFocusTraversable(false);
         btnSearch.setFocusTraversable(false);
-        btnPauseGame.setFocusTraversable(false);
+//        btnPauseGame.setFocusTraversable(false);
 
         lblScore.setFocusTraversable(false);
         lstPlaylist.setFocusTraversable(false);
@@ -795,14 +795,19 @@ public class SpaceInvaders extends Application
         }
     }
 
+    @FXML private void clearAllHighscores () {
+        HighScoreManager.highScores.clear();
+    }
+
     // FX
     public static void rumbleScreen() {
 
         // Lambda Runnable
         Runnable task2 = () -> {
             for (int i = 0; i < 10; i++) {
-                double xPos = stage.getX() + ((randyMcRando.nextDouble() * 20) - 10);
-                double yPos = stage.getY() + ((randyMcRando.nextDouble() * 20) - 10);
+                int jumpSize = 50;
+                double xPos = stage.getX() + ((randyMcRando.nextDouble() * jumpSize) - (jumpSize / 2));
+                double yPos = stage.getY() + ((randyMcRando.nextDouble() * jumpSize) - (jumpSize / 2));
                 stage.setX(xPos);
                 stage.setY(yPos);
                 try {

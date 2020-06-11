@@ -6,38 +6,12 @@
 
 <BorderPane prefHeight="800.0" prefWidth="1164.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <HBox id="gameFrame" fx:id="gameFrame" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-
-    </center>
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="miItem" mnemonicParsing="false" onAction="#shutdownGame" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem fx:id="miHelp" mnemonicParsing="false" onAction="#openHelpFiles" text="Help" />
-                  <MenuItem fx:id="miAbout" mnemonicParsing="false" onAction="#openAboutDisplay" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-   <bottom>
-      <VBox BorderPane.alignment="CENTER">
+      <VBox alignment="BOTTOM_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="BOTTOM_CENTER">
          <children>
-            <Button fx:id="btnPauseGame" mnemonicParsing="false" onAction="#togglePause" prefHeight="25.0" prefWidth="844.0" text="||" />
-            <HBox id="scoreBoard" prefWidth="646.0" spacing="100.0" style="-fx-background-color: #000;" stylesheets="@styles/styles.css">
+              <HBox id="gameFrame" fx:id="gameFrame" VBox.vgrow="ALWAYS" />
+            <HBox id="scoreBoard" alignment="CENTER" fillHeight="false" prefHeight="62.0" prefWidth="842.0" spacing="100.0" style="-fx-background-color: #000;" stylesheets="@styles/styles.css">
                <children>
-                  <HBox HBox.hgrow="ALWAYS">
+                  <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Score: " textAlignment="CENTER" textFill="WHITE">
                            <font>
@@ -51,7 +25,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="Level: " textAlignment="CENTER" textFill="WHITE">
                            <font>
@@ -69,7 +43,30 @@
             </HBox>
          </children>
       </VBox>
-   </bottom>
+
+    </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="miItem" mnemonicParsing="false" onAction="#shutdownGame" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Highscores">
+            <items>
+              <MenuItem fx:id="miClearAll" mnemonicParsing="false" onAction="#clearAllHighscores" text="Clear All..." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="miHelp" mnemonicParsing="false" onAction="#openHelpFiles" text="Help" />
+                  <MenuItem fx:id="miAbout" mnemonicParsing="false" onAction="#openAboutDisplay" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
    <right>
       <SplitPane dividerPositions="0.47638326585695007" orientation="VERTICAL" prefHeight="718.0" prefWidth="322.0" BorderPane.alignment="CENTER">
         <items>
