@@ -32,6 +32,10 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import main.musicPlayer.MusicPlayer;
 
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -628,6 +632,22 @@ public class SpaceInvaders extends Application
     public void saveDataFile()
     {
 
+    }
+
+    @FXML public void openHelpFiles() {
+        File htmlFile = new File("help/index.html");
+        try {
+            Desktop.getDesktop().browse(htmlFile.toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML public void openAboutDisplay() {
+        JOptionPane.showMessageDialog(null,
+                "TAFE INVADERS\n=================\n\nThis project was created by Ben Royans.\nJava III in 2020. " +
+                        "\n\nEmail any questions or queries to ben.royans@gmail.com",
+                "About", JOptionPane.INFORMATION_MESSAGE);
     }
 }
 

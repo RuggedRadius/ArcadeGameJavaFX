@@ -13,7 +13,7 @@ public class Settings
 
     // Enemies
     public static int MAX_ENEMY_COUNT = 10;
-    public static int ENEMY_SIZE = 100;
+    public static int ENEMY_SIZE = 150;
     public static int ENEMY_SPEED_MULTIPLIER = 2;
 
     // Player
@@ -33,7 +33,41 @@ public class Settings
     public static final Image PLAYER_IMG = new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/spaceship.png");
     public static final Image EXPLOSION_IMG = new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/X_plosion/PNG/frame0019.png");
     public static final Image BOMBS_IMG[] = {
-            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/pepe.png")
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile001.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile002.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile003.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile004.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile005.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile006.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile007.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile008.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile009.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile010.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile011.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile012.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile013.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile014.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile015.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile016.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile017.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile018.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile019.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile020.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile021.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile022.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile023.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile024.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile025.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile026.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile027.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile028.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile029.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile030.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile031.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile032.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile033.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile034.png"),
+            new Image("file:/C:/Users/Ben/Documents/GitHub/ArcadeGameJavaFX/Source/data/enemies/tile035.png")
     };
 
     // Explosions
