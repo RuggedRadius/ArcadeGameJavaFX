@@ -3,6 +3,8 @@ package main;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
+import main.tools.Settings;
+import main.tools.Utilities;
 //import gameObjects.SpaceShip;
 
 

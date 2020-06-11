@@ -12,9 +12,11 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -27,23 +29,33 @@ import javafx.scene.paint.RadialGradient;
 import javafx.scene.paint.Stop;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.util.Duration;
+import main.highScores.FileHandling;
+import main.highScores.HighScore;
+import main.highScores.HighScoreManager;
+import main.mergeSort.MergeSort;
 import main.musicPlayer.MusicPlayer;
+import main.tools.Settings;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
 
 
 import static main.GameScore.score;
-import static main.Settings.*;
-import static main.Utilities.randyMcRando;
+import static main.tools.Settings.*;
+import static main.tools.Utilities.randyMcRando;
+import static main.binarySearch.BinarySearch.binarySearch;
 
 
 public class SpaceInvaders extends Application
@@ -51,11 +63,21 @@ public class SpaceInvaders extends Application
     // FX Controls
     @FXML public Label lblScore;
     @FXML public ListView lstPlaylist;
+    @FXML public TableView tblHighScores;
+
+    @FXML public TextField txtSearch;
+    @FXML public Button btnSearch;
 
     @FXML public Button btnPlay;
     @FXML public Button btnStop;
     @FXML public Button btnNext;
     @FXML public Button btnPrevious;
+
+    @FXML public Button btnPauseGame;
+
+    @FXML public Button btnSortName;
+    @FXML public Button btnSortScore;
+    @FXML public Button btnSortDate;
 
     // Variables
     boolean gameOver = false;
@@ -74,14 +96,86 @@ public class SpaceInvaders extends Application
 
     boolean movingLeft;
     boolean movingRight;
+    boolean paused;
 
     MusicPlayer musicPlayer;
+    HighScoreManager scoreManager;
 
 
 
+    // Sorting
+    @FXML private void sortScoresByName() {
+        System.out.println("Sorting by name");
+        HighScoreManager.highScores = MergeSort.Sort_Names(HighScoreManager.highScores);
+        tblHighScores.setItems(HighScoreManager.highScores);
+    }
+    @FXML private void sortScoresByScore() {
+        System.out.println("Sorting by score");
+        HighScoreManager.highScores = MergeSort.Sort_Scores(HighScoreManager.highScores);
+        tblHighScores.setItems(HighScoreManager.highScores);
+    }
+    @FXML private void sortScoresByDate() {
+        System.out.println("Sorting by date");
+        HighScoreManager.highScores = MergeSort.Sort_Date(HighScoreManager.highScores);
+        tblHighScores.setItems(HighScoreManager.highScores);
+    }
+
+    // Search
+    @FXML private void search() {
+        // Sort list of music files
+        Collections.sort((lstPlaylist.getItems()));
+
+        // Get array of music files
+        String[] musicFiles = new String[lstPlaylist.getItems().size()];
+        for (int i = 0; i < musicFiles.length; i++)
+        {
+            musicFiles[i] = lstPlaylist.getItems().get(i).toString();
+        }
+
+        // Get key for search
+        String key = txtSearch.getText();
 
 
 
+        // Get index of key
+        int foundIndex = binarySearch(musicFiles, 0, musicFiles.length - 1, key);
+
+        if (foundIndex >= 0)
+        {
+            // Select song
+            lstPlaylist.getSelectionModel().select(foundIndex);
+
+            // play song
+            playSong(key);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Song not found, please check the title.",
+                    "Song Title Not Found",
+                    JOptionPane.WARNING_MESSAGE
+            );
+        }
+    }
+
+    private void playSong(String fileName) {
+        if (!musicPlayer.playlist.currentNode.getFileName().equals(fileName))
+        {
+            // Stop the music
+            musicPlayer.stop();
+
+            // Start at the beginning
+            musicPlayer.playlist.currentNode = musicPlayer.playlist.getFirst();
+
+            while (!musicPlayer.playlist.currentNode.getFileName().equals(fileName)) {
+                musicPlayer.playlist.currentNode = musicPlayer.playlist.currentNode.getNext();
+            }
+
+            // Play the music
+            musicPlayer.play();
+        }
+    }
 
 
     // General
@@ -93,16 +187,23 @@ public class SpaceInvaders extends Application
         System.out.println("Starting background music...");
         musicPlayer = new MusicPlayer(this);
 
+        // High scores manager
+        scoreManager = new HighScoreManager();
+
         // Load scene from FXML file
         this.stage = stage;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         loader.setController(this);
         BorderPane root = loader.load();
 
+        // Init UI elements
+        initHighScoreTable();
+
         // Initialise window
         stage.setTitle("TAFE Invaders");
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
 
         // Add handler to stop all threads on exit
@@ -130,6 +231,25 @@ public class SpaceInvaders extends Application
 
         // Create game canvas
         gameCanvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        gameCanvas.setFocusTraversable(true);
+
+        lstPlaylist.setFocusTraversable(false);
+        tblHighScores.setFocusTraversable(false);
+        btnNext.setFocusTraversable(false);
+        btnPlay.setFocusTraversable(false);
+        btnPrevious.setFocusTraversable(false);
+        btnSortDate.setFocusTraversable(false);
+        btnSortName.setFocusTraversable(false);
+        btnSortScore.setFocusTraversable(false);
+        btnStop.setFocusTraversable(false);
+        btnSearch.setFocusTraversable(false);
+        btnPauseGame.setFocusTraversable(false);
+
+        lblScore.setFocusTraversable(false);
+        lstPlaylist.setFocusTraversable(false);
+        txtSearch.setFocusTraversable(false);
+
         gc = gameCanvas.getGraphicsContext2D();
         Timeline timeline = new Timeline(new KeyFrame(Duration.millis(100), e -> run(gc)));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -141,7 +261,6 @@ public class SpaceInvaders extends Application
         gameCanvas.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.LEFT && !movingLeft)
             {
-
                 // Lambda Runnable
                 Runnable moveLeftRun = () -> {
                     movingRight = true;
@@ -156,9 +275,6 @@ public class SpaceInvaders extends Application
                     }
                 };
                 new Thread(moveLeftRun).start();
-
-
-//                player.posX -= Settings.PLAYER_SPEED_HORIZONTAL;
             }
             if (e.getCode() == KeyCode.RIGHT && !movingRight)
             {
@@ -178,11 +294,6 @@ public class SpaceInvaders extends Application
                     }
                 };
                 new Thread(moveRightRun).start();
-
-
-
-
-//                player.posX += Settings.PLAYER_SPEED_HORIZONTAL;
             }
             if (e.getCode() == KeyCode.SPACE)
             {
@@ -215,13 +326,16 @@ public class SpaceInvaders extends Application
         });
         gameCanvas.setOnMouseClicked(e -> { handleMouseClick(e); });
 
+        gameCanvas.setOnMouseClicked(event -> {
+            gameCanvas.requestFocus();
+            paused = false;
+        });
+
         // Set up game canvas
         setup();
 
         // Add canvas to window
         targetFrame.getChildren().add(gameCanvas);
-
-
 
         // Populate playlist list view
         String[] musicFiles = musicPlayer.playlist.traverseFilenames();
@@ -233,8 +347,6 @@ public class SpaceInvaders extends Application
         // Select first item in playlist
         lstPlaylist.getSelectionModel().select(musicPlayer.playlist.currentNode.getFileName());
 
-        musicPlayer.play();
-
         // Focus on game area for controls
         gameCanvas.requestFocus();
     }
@@ -244,8 +356,6 @@ public class SpaceInvaders extends Application
         lstPlaylist.getSelectionModel().select(playlistItem);
     }
 
-
-
     private void setup() {
         // Initialise objects
         univ = new ArrayList<>();
@@ -254,6 +364,7 @@ public class SpaceInvaders extends Application
         player = new PlayerShip(gc, (int)CANVAS_WIDTH / 2, (int)CANVAS_HEIGHT - PLAYER_SIZE, PLAYER_SIZE, PLAYER_IMG);
         score = 0;
 
+        // Create enemies
         IntStream.range(0, MAX_ENEMY_COUNT).mapToObj(i -> this.newEnemy()).forEach(enemyShips::add);
 
         // Lambda Runnable
@@ -268,68 +379,84 @@ public class SpaceInvaders extends Application
         };
         new Thread(pressEnterText).start();
     }
-    public static void main(String[] args) {
-
-//        DoublyLinkedList dll = new DoublyLinkedList(new Node("Tester", 50000, 5));
-//        dll.addFirst(new Node("New First", 3000, 21));
-//        for (int i = 0; i < 10; i++) {
-//            dll.addLast(new Node("Player " + i, 40000, 3));
-//        }
-//        dll.testTraverse();
-
-
-        launch(args);
-
-
-    }
+    public static void main(String[] args) { launch(args); }
 
     @FXML
     private void shutdownGame()
     {
-        // Shut down procedure
+        // Stop music
         musicPlayer.stop();
+
+        // Save highscores to file
+        FileHandling.saveDataFile();
+
+        // Exit app
+        System.exit(0);
     }
 
     @FXML public void musicPlay() {
-        System.out.println("PLAY Clicked");
         musicPlayer.play();
     }
     @FXML public void musicStop() {
-        System.out.println("STOP Clicked");
-        musicPlayer.stop(); }
+        musicPlayer.stop();
+    }
     @FXML public void musicNext() {
-        System.out.println("NEXT Clicked");
         musicPlayer.next(); }
     @FXML public void musicPrevious() {
-        System.out.println("PREVIOUS Clicked");
         musicPlayer.previous(); }
 
+    private void initHighScoreTable() {
+        System.out.println("Initialising high score table...");
+
+        TableColumn<String, HighScore> colName = new TableColumn<>("Player Name");
+        colName.setCellValueFactory(new PropertyValueFactory<>("playerName"));
+
+        TableColumn<String, HighScore> colScore = new TableColumn<>("Score");
+        colScore.setCellValueFactory(new PropertyValueFactory<>("score"));
+
+        TableColumn<String, HighScore> colDate = new TableColumn<>("Date");
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        colName.prefWidthProperty().bind(tblHighScores.widthProperty().multiply(0.4));
+        colScore.prefWidthProperty().bind(tblHighScores.widthProperty().multiply(0.2));
+        colDate.prefWidthProperty().bind(tblHighScores.widthProperty().multiply(0.4));
+
+        tblHighScores.getColumns().addAll(colName, colScore, colDate);
+
+        tblHighScores.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+        tblHighScores.setEditable(false);
+
+        FileHandling.loadDataFile();
+
+        tblHighScores.setItems(scoreManager.highScores);
+    }
 
 
     // Input
     private void handleMouseClick(MouseEvent e) {
         if(missiles.size() < MAX_MISSILES_ONSCREEN) missiles.add(player.shoot());
-        if(gameOver) {
-            gameOver = false;
-            gameOverPrinted = false;
-            setup();
-        }
     }
     private void handleInputKeys(KeyEvent e) {
         if (e.getCode() == KeyCode.LEFT)
         {
+            gameCanvas.requestFocus();
             player.posX -= Settings.PLAYER_SPEED_HORIZONTAL;
         }
         if (e.getCode() == KeyCode.RIGHT)
         {
+            gameCanvas.requestFocus();
             player.posX += Settings.PLAYER_SPEED_HORIZONTAL;
         }
-        if (e.getCode() == KeyCode.SPACE)
-        {
+        if (e.getCode() == KeyCode.SPACE) {
+
             if(missiles.size() < MAX_MISSILES_ONSCREEN)
             {
                 missiles.add(player.shoot());
             }
+        }
+        if (e.getCode() == KeyCode.ENTER) {
+            System.out.println("Enter pressed");
         }
         if (gameOver)
         {
@@ -342,17 +469,63 @@ public class SpaceInvaders extends Application
         }
     }
 
+    @FXML private void togglePause() {
+        paused = !paused;
+
+        if (!paused)
+        {
+            gameCanvas.requestFocus();
+        }
+        else
+        {
+            txtSearch.requestFocus();
+        }
+    }
+
+
+
     //run Graphics
     private void run(GraphicsContext gc) {
+        if (!gameCanvas.isFocused())
+            paused = true;
+
+
         if (gameOver)
         {
-            destroyAllEnemies();
             if (!gameOverPrinted) {
+                destroyAllEnemies();
                 printGameOver();
+            }
+        }
+        else if (paused) {
+            // Draw base
+            drawBlackScreen();
+
+            // Draw stars underneath spaceships
+            univ.forEach(Star::draw);
+
+            // Write paused
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ss");
+            int date = LocalDateTime.now().getSecond();
+            if (date%2 == 0) {
+                gc.setFill(Color.WHITE);
+                gc.setFont(new Font(gc.getFont().getName(), 100));
+                gc.fillText("|| PAUSED", 250, 100);
+            }
+
+            // Replenish stars
+            if(randyMcRando.nextInt(10) > 2) {
+                univ.add(new Star(gc));
+            }
+            for (int i = 0; i < univ.size(); i++) {
+                if(univ.get(i).posY > CANVAS_HEIGHT)
+                    univ.remove(i);
             }
         }
         else
         {
+            gameCanvas.requestFocus();
+
             // Paint black base
             gc.setFill(Color.BLACK);
             gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -443,6 +616,7 @@ public class SpaceInvaders extends Application
             gameOver = player.destroyed;
 
 
+            // Replenish stars
             if(randyMcRando.nextInt(10) > 2) {
                 univ.add(new Star(gc));
             }
@@ -454,7 +628,7 @@ public class SpaceInvaders extends Application
 
         // Update UI
         lblScore.setText(String.valueOf(score));
-        gameCanvas.requestFocus();
+//        gameCanvas.requestFocus();
     }
     private void drawBlackScreen() {
         // Paint black base
@@ -462,27 +636,20 @@ public class SpaceInvaders extends Application
         gc.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
     private void printGameOver() {
-        System.out.println("Printing game over..");
 
 
+        // Start printing thread
         Runnable gameOverText = () -> {
             gameOverPrinted = true;
             // Draw blank black screen
 //            drawBlackScreen();
 
-            // FX
-            // .. Vignette maybe?
-
             // Write game over text
             gc.setTextAlign(TextAlignment.CENTER);
 
-
             // Print "Game Over"
             Runnable printGameOverText = () -> {
-
-
-                for (int i = 0; i < 1; i++)
-                {
+                for (int i = 0; i < 1; i++) {
                     int startPos = (int) (CANVAS_HEIGHT / 2);
                     int fontSize = 30;
                     int initR = 0;
@@ -521,11 +688,8 @@ public class SpaceInvaders extends Application
                         e.printStackTrace();
                     }
                 }
-
-
             };
             new Thread(printGameOverText).start();
-
 
             try
             {
@@ -536,12 +700,25 @@ public class SpaceInvaders extends Application
                 e.printStackTrace();
             }
 
-
             // Lambda Runnable
             Runnable pressEnterText = () -> {
                 gc.setFont(Font.font(20));
 
                 while (gameOver) {
+                    drawBlackScreen();
+
+                    // Print game over
+                    gc.setFont(Font.font(80));
+                    gc.setFill(Color.rgb(0, 125, 255));
+                    gc.fillText("Game Over", CANVAS_WIDTH / 2, (int) (CANVAS_HEIGHT / 2) - 150);
+
+                    // Print 'click here' if out of focus
+                    if (!gameCanvas.isFocused()) {
+                        gc.setFont(Font.font(40));
+                        gc.setFill(Color.rgb(100, 100, 100));
+                        gc.fillText("<Click the game screen to continue playing>", CANVAS_WIDTH / 2, (int) (CANVAS_HEIGHT / 2) + 100);
+                    }
+
                     gc.setFill(Color.rgb(0, 125, 255));
                     gc.setFont(Font.font(20));
                     gc.fillText("Press <ENTER> to play again...", CANVAS_WIDTH / 2, (CANVAS_HEIGHT / 2) + 250);
@@ -562,8 +739,12 @@ public class SpaceInvaders extends Application
             };
             new Thread(pressEnterText).start();
 
+
+            // Create high score object, Add to high scores list
+            scoreManager.addHighScore(new HighScore(getPlayerName(), score));
         };
         new Thread(gameOverText).start();
+
 
     }
     private void clampPlayerBounds() {
@@ -580,6 +761,14 @@ public class SpaceInvaders extends Application
         }
     }
 
+    private String getPlayerName() {
+        String playerName = null;
+        while (playerName == null || playerName.isBlank() || playerName.isEmpty())
+        {
+            playerName = JOptionPane.showInputDialog(null, "Enter your name: ", "High Score", -1);
+        }
+        return playerName;
+    }
 
     // Enemies
     EnemyShip newEnemy() {
@@ -622,6 +811,12 @@ public class SpaceInvaders extends Application
                     e.printStackTrace();
                 }
             }
+
+            // Reset screen position
+            stage.setX(Screen.getPrimary().getVisualBounds().getMinX());
+            stage.setY(Screen.getPrimary().getVisualBounds().getMinY());
+//            stage.setWidth(Screen.getPrimary().getVisualBounds().getWidth());
+//            stage.setHeight(Screen.getPrimary().getVisualBounds().getHeight());
         };
 
         // start the thread

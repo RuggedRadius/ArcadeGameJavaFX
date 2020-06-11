@@ -2,9 +2,10 @@ package main;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import main.tools.Settings;
 
 import static main.GameScore.*;
-import static main.Settings.*;
+import static main.tools.Settings.*;
 
 public class EnemyShip extends SpaceShip
 {

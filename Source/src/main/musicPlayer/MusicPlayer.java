@@ -1,19 +1,12 @@
 package main.musicPlayer;
 
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
+import javazoom.jl.player.advanced.AdvancedPlayer;
+import javazoom.jl.player.advanced.PlaybackEvent;
+import javazoom.jl.player.advanced.PlaybackListener;
 import main.SpaceInvaders;
-import org.apache.commons.io.FilenameUtils;
-import main.FileHandling;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
 public class MusicPlayer
 {
@@ -25,7 +18,7 @@ public class MusicPlayer
 
     private FileInputStream fileInputStream;
     private BufferedInputStream bufferedInputStream;
-    private Player musicPlayer;
+    private AdvancedPlayer musicPlayer;
     private boolean playing;
 
     public MusicPlayer (SpaceInvaders _controller) {
@@ -35,9 +28,8 @@ public class MusicPlayer
         // Controller for updating UI
         controller = _controller;
 
-//        playing = true;
-        playThread = new Thread(runnablePlayMusic);
-        playThread.start();
+        // Start music loop
+        play();
     }
 
 
@@ -45,26 +37,32 @@ public class MusicPlayer
 
 
     public void play() {
-        System.out.println("Playing");
-        playing = true;
 
-        try
-        {
-            // Stream file to player
-            fileInputStream = new FileInputStream(playlist.currentNode.file);
-            bufferedInputStream = new BufferedInputStream(fileInputStream);
-            musicPlayer = new Player(bufferedInputStream);
-        }
-        catch (JavaLayerException | FileNotFoundException e)
-        {
-            e.printStackTrace();
+        if (!playing) {
+            if (playThread == null) {
+
+                playThread = new Thread(runnableMusicLoop);
+            }
+            playThread.start();
+            playing = true;
         }
     }
 
     public void stop() {
-        System.out.println("Stopping...");
-        playing = false;
-        musicPlayer.close();
+        // Pack up
+        try {
+            playing = false;
+
+            musicPlayer.close();
+            fileInputStream.close();
+            bufferedInputStream.close();
+
+            playThread.interrupt();
+            playThread = null;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void next() {
@@ -160,31 +158,43 @@ public class MusicPlayer
         }
     }
 
-
-
-    Runnable runnablePlayMusic = new Runnable() {
+    Runnable runnableMusicLoop = new Runnable() {
         @Override
         public void run() {
-            try {
-                while (true)
-                {
-                    // This little pause is vital, otherwise music wont play.... and i'm not sure why
-                    Thread.sleep(50);
-                    
-                    if (playing && playlist.currentNode != null && musicPlayer != null)
-                    {
-                        System.out.println("Playing: " + playlist.currentNode.fileName);
-
-                        // Play music
-                        while (playing && !musicPlayer.isComplete())
-                        {
-                            musicPlayer.play(1);
-                        }
+            while (playing) {
+                try {
+                    // Make sure current node isnt empty
+                    if (playlist.currentNode == null) {
+                        System.out.println("Empty node, starting from root node");
+                        playlist.currentNode = playlist.getFirst();
                     }
+
+                    System.out.println("Playing: " + playlist.currentNode.fileName);
+
+                    // Setup
+                    fileInputStream = new FileInputStream(playlist.currentNode.file);
+                    bufferedInputStream = new BufferedInputStream(fileInputStream);
+                    musicPlayer = new AdvancedPlayer(bufferedInputStream);
+
+                    // Set handler on new player
+                    musicPlayer.setPlayBackListener(new PlaybackListener() {
+                        @Override
+                        public void playbackFinished(PlaybackEvent event) {
+                            playlist.currentNode = playlist.currentNode.getNext();
+                        }
+                    });
+
+                    // Play the music
+                    musicPlayer.play();
+
+                    // Pack up
+                    fileInputStream.close();
+                    bufferedInputStream.close();
+                    musicPlayer.close();
                 }
-            }
-            catch (Exception ex) {
-                ex.printStackTrace();
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     };

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1324bf26-be85-47fe-b8e6-17ff44097135" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Source.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/binarySearch/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/mergeSort/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_io_2_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jlayer_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArcadeGameJavaFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArcadeGameJavaFX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/NRG (Space Marine Edit).mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/Patterns-Clip patterns-clip.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/Riddim-and-Melody riddim-and-melody.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/Tripper-Hop-Instrumental tripperhop.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/VVz3g6OYJJLw.128.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/hs7R7GIz61b4.128.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/track_01.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/track_02.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/META-INF/ArcadeGameJavaFX.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/EnemyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/EnemyShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/FileHandling.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/MergeSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/Missile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/Missile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceShip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/Star.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/Star.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/Utilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/highScores/HighScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/highScores/HighScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/highScores/HighScoreManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/highScores/HighScoreManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EnemyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EnemyShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/FileHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/FileHandling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MergeSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Missile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tools/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SpaceInvaders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpaceInvaders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpaceShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tools/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/highScores/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/highScores/HighScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/HighScoreManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/musicPlayer/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/musicPlayer/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1d9QKXYKtjtIFFXRg89bedQPUDd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PATH_TO_FX$/javafx.web.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="main" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpaceInvaders" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.SpaceInvaders" />
+      <module name="ArcadeGameJavaFX" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="main.SpaceInvaders" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1324bf26-be85-47fe-b8e6-17ff44097135" name="Default Changelist" comment="" />
+      <created>1591834766000</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591834766000</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="657" y="139" key="#SpaceInvaders" timestamp="1591834924758">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="657" y="139" key="#SpaceInvaders/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591834924758" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591834940071">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591834940071" />
+    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591834889135">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591834889135" />
+    <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591865896636">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="414" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591865896636" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1591843408595">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591843408595" />
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="314" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591868695132" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="314" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591868695132" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="314" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591868695132" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="314" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591868695132" />
+    <state width="1877" height="186" key="GridCell.Tab.1.bottom" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="186" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591856710404" />
+    <state width="1877" height="186" key="GridCell.Tab.1.center" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="186" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591856710404" />
+    <state width="1877" height="186" key="GridCell.Tab.1.left" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="186" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591856710404" />
+    <state width="1877" height="186" key="GridCell.Tab.1.right" timestamp="1591869602316">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="186" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
+    <state width="1877" height="186" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591856710404" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1591835058962">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591835058962" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1591837249507">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591837249507" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/binarySearch/BinarySearch.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/jlayer-1.0.1.jar!/javazoom/jl/player/advanced/AdvancedPlayer.class</url>
+          <line>141</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/SpaceInvaders.java</url>
+          <line>182</line>
+          <properties class="main.SpaceInvaders" method="start">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="musicPlayer" />
+        <watch expression="playlist.currentNode.file" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

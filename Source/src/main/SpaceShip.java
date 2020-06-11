@@ -3,7 +3,7 @@ package main;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-import static main.Settings.*;
+import static main.tools.Settings.*;
 
 public class SpaceShip
 {

@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 
 import java.util.Random;
 
-import static main.Settings.CANVAS_WIDTH;
+import static main.tools.Settings.CANVAS_WIDTH;
 
 public class Star
 {
