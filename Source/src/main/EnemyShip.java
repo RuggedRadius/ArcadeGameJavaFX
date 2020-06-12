@@ -11,8 +11,8 @@ public class EnemyShip extends SpaceShip
 {
     int scoreValue = 100;
 
-//    int SPEED = ((score/1000) + 1) * Settings.ENEMY_SPEED_MULTIPLIER;
-    int SPEED = ((score/1000) + 10) * Settings.ENEMY_SPEED_MULTIPLIER; // DEBUG VERSION!!
+    int SPEED = ((score/1000) + 1) * Settings.ENEMY_SPEED_MULTIPLIER;
+//    int SPEED = ((score/1000) + 10) * Settings.ENEMY_SPEED_MULTIPLIER; // DEBUG VERSION!!
 
     public EnemyShip(GraphicsContext _gc, int posX, int posY, int size, Image img)
     {

@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1324bf26-be85-47fe-b8e6-17ff44097135" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/hash/Hash.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/help/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/help/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/help/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/01 - hs7R7GIz61b4.128.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/02 - NRG (Space Marine Edit).mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/05 - track_01.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/06 - track_02.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/174bpm_break_14.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/cooler.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/sshhh.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/EnemyShip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/EnemyShip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/musicPlayer/MusicPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/highScores/HighScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/highScores/HighScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EnemyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EnemyShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/SpaceInvaders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpaceInvaders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/musicPlayer/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/musicPlayer/MusicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/highScores/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/layout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userdata/highscores.dat" beforeDir="false" afterPath="$PROJECT_DIR$/userdata/highscores.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,26 +112,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591843408595" />
-    <state width="1877" height="185" key="GridCell.Tab.0.bottom" timestamp="1591871035919">
+    <state width="1877" height="161" key="GridCell.Tab.0.bottom" timestamp="1591942912237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="163" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591870077558" />
-    <state width="1877" height="185" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state width="1877" height="185" key="GridCell.Tab.0.center" timestamp="1591871035919">
+    <state width="1877" height="161" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591942912237" />
+    <state width="1877" height="161" key="GridCell.Tab.0.center" timestamp="1591942912237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="163" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591870077558" />
-    <state width="1877" height="185" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state width="1877" height="185" key="GridCell.Tab.0.left" timestamp="1591871035919">
+    <state width="1877" height="161" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591942912237" />
+    <state width="1877" height="161" key="GridCell.Tab.0.left" timestamp="1591942912237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="163" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591870077557" />
-    <state width="1877" height="185" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state width="1877" height="185" key="GridCell.Tab.0.right" timestamp="1591871035919">
+    <state width="1877" height="161" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591942912237" />
+    <state width="1877" height="161" key="GridCell.Tab.0.right" timestamp="1591942912237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="163" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591870077558" />
-    <state width="1877" height="185" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
+    <state width="1877" height="161" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591942912237" />
     <state width="1877" height="185" key="GridCell.Tab.1.bottom" timestamp="1591871035919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -145,6 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591835058962" />
+    <state x="306" y="118" width="1578" height="999" key="dock-window-1" timestamp="1591941538424">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="306" y="118" width="1578" height="999" key="dock-window-1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591941538424" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1591837249507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,52 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RetroAchievements Browser Help</title>
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link href="./styles/styles.css" rel="stylesheet">
 </head>
+
 <body>
     <div id="page-wrapper">
         <div id="header">
-            <h1>RetroAchievements Browser Help</h1>
+            <h1>TAFE Invaders Help</h1>
         </div>
         <div id="main">
             <div id="nav">
                 <ul>
-                    <li><a href="">Topic</a></li>
+                    <li><a href="#controls">Controls</a></li>
+                    <li><a href="#music">Music</a></li>
                     <ul>
-                        <li><a href="">Topic</a></li>
-                        <li><a href="">Topic</a></li>
-                        <li><a href="">Topic</a></li>
+                        <li><a href="#musicplayer">Music Player</a></li>
+                        <li><a href="#soundtrack">Soundtrack</a></li>
                     </ul>
-                    <li><a href="">Topic</a></li>
-                    <li><a href="">Topic</a></li>
+                    <li><a href="#highscores">Highscores</a></li>
                     <ul>
-                        <li><a href="">Topic</a></li>
-                        <li><a href="">Topic</a></li>
-                        <li><a href="">Topic</a></li>
+                        <li><a href="#sorting">Sorting</a></li>
+                        <li><a href="#loadingsaving">Loading/Saving</a></li>
                     </ul>
+                    <li><a href="#author">About/Information</a></li>
+
                 </ul>
             </div>
             <div id="content">
-                <h1>Content</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae tempora perspiciatis sed voluptas? Harum mollitia perspiciatis consectetur sapiente assumenda sunt animi suscipit labore totam! Asperiores rem est autem sit.</p>
-                <br>
-                <h1>Content</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae tempora perspiciatis sed voluptas? Harum mollitia perspiciatis consectetur sapiente assumenda sunt animi suscipit labore totam! Asperiores rem est autem sit.</p>
-                <br>
-                <h1>Content</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae tempora perspiciatis sed voluptas? Harum mollitia perspiciatis consectetur sapiente assumenda sunt animi suscipit labore totam! Asperiores rem est autem sit.</p>
-                <br>
+
+                <!-- Controls -->
+                <div id="controls" class="section">
+                    <h1>Controls</h1>
+                    <br>
+                    <p><b>Move Left:</b> Left Arrow</p>
+                    <br>
+                    <p><b>Move Right:</b> Right Arrow</p>
+                    <br>
+                    <p><b>Shoot:</b> Space</p>
+                </div>
+
+                <!-- Music -->
+                <div id="music" class="section">
+                    <h1>Music</h1>
+                    <br>
+                    <h2 id="musicplayer">Music Player</h2>
+                    <img src="./images/musicplayer.png" />
+                    <p style="text-align: left;">The music is controlled using the above buttons on the main form.
+                        Pressing play will play the track, if it is not playing already. The stop button will stop the
+                        currently playing track. The next and previous buttons work by advancing the currently palying
+                        track to the previous/next track respectively.</p>
+                    <br>
+                    <h2 id="soundtrack">Soundtrack</h2>
+                    <p style="text-align: left;">Below is the full track list of the original soundtrack for TAFE
+                        Invaders:</p>
+                </div>
+
+                <!-- HighScores -->
+                <div id="highscores" class="section">
+                    <h1>Highscores</h1>
+                    <br>
+                    <p>The highscores are automatically recorded after each game run. Simply enter your name to record
+                        the score.</p>
+                    <br>
+                    <h2>Sorting</h2>
+                    <img src="./images/sorting.png" />
+                    <p>To sort the highscores, click the corresponding button to the method in which you wish the
+                        highscores to be sorted. The options include sorting by:</p>
+                    <ul style="text-align: left; transform: translateX(50px);">
+                        <li>Name</li>
+                        <li>Score</li>
+                        <li>Date</li>
+                    </ul>
+                </div>
+
+                <!-- Author -->
+                <div id="author" class="section">
+                    <h1>About/Information</h1>
+                    <br>
+                    <h2>About</h2>
+                    <p style="text-align: left;">Made by Ben Royans for Java III's final assessment at South
+                        Metropolitan TAFE in 2020.</p>
+                    <br>
+                    <h2>Contact</h2>
+                    <p style="text-align: left;">Contact the developer at <a
+                            href="mailto:ben.royans@gmail.com">ben.royans@gmail.com</a></p>
+                </div>
+
             </div>
         </div>
     </div>
 
 </body>
+
 </html>

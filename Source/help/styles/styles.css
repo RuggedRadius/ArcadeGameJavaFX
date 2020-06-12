@@ -64,7 +64,7 @@ body {
 
 #content {
     width: 80%;
-    height: 100%;
+    height: auto;
 
     
 
@@ -80,3 +80,24 @@ body {
     color: white;
     padding-left: 50px;
 }
+
+#content h2 {
+    text-align: left;
+}
+
+.section {
+    margin: 100px;
+    border: 1px solid white;
+    padding: 0px 10px 50px 10px;
+
+    /* text-align: center; */
+    font-size: 1.5rem;
+}
+
+img {
+    margin: 50px;
+}
+/* 
+.section h1, h2 {
+    text-align: left;
+} */

@@ -192,7 +192,7 @@ public class SpaceInvaders extends Application
 
         // Load scene from FXML file
         this.stage = stage;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("layout.fxml"));
         loader.setController(this);
         BorderPane root = loader.load();
 
