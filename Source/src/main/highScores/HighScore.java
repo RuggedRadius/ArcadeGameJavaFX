@@ -27,28 +27,16 @@ public class HighScore implements Serializable
         LocalDateTime now = LocalDateTime.now();
         date = dtf.format(now);
 
-        // Hash player's name
+        // Hash player's name for science
         playerNameHashed = Hash.MD5(_playerName);
     }
-
-
 
     public String getPlayerName() {
         return playerName;
     }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
     public int getScore() {
         return score;
     }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public String getDate() {
         return date;
     }

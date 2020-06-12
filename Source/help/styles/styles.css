@@ -13,15 +13,11 @@ a {
     text-decoration: none;
 }
 
-body {
-    /* background: rgba(0, 128, 128, 1); */
-}
-
 #header {
-    position: fixed;
+    /* position: fixed; */
 
     width: 100%;
-    height: 70px;
+    height: auto;
 
     background: black;
     background: linear-gradient(black, black, transparent);
@@ -49,7 +45,9 @@ body {
     background: rgba(0, 40, 40, 1);
     color: white;
 
-    padding-top: 70px;
+    /* padding-top: 70px; */
+
+    word-wrap: break-word;
 }
 
 #nav a {
@@ -86,7 +84,10 @@ body {
 }
 
 .section {
-    margin: 100px;
+    margin: 50px auto;
+
+    width: 80%;
+
     border: 1px solid white;
     padding: 0px 10px 50px 10px;
 
