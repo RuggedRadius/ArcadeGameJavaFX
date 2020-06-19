@@ -2,15 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1324bf26-be85-47fe-b8e6-17ff44097135" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/main/hash/HashTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documentation/Product Design Specification.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documentation/Product Design Specification.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/Product Design Specification.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Documentation/~$estion 2 - Product Design Specifications.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/ArcadeGameJavaFX/main/SpaceInvadersTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/main/SpaceInvadersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentation/Question 1 - Pre-design Specifications.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/Question 1 - Pre-design Specifications.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentation/Question 4 - Test Document.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/Question 4 - Test Document.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArcadeGameJavaFX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ArcadeGameJavaFX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/help/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/help/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArcadeGameJavaFX/main/SpaceInvaders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EnemyShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EnemyShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Missile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/PlayerShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/PlayerShip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/SpaceInvaders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpaceInvaders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SpaceShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpaceShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/binarySearch/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/binarySearch/BinarySearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/hash/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/hash/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/highScores/FileHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/FileHandling.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/highScores/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/highScores/HighScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/highScores/HighScoreManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mergeSort/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/mergeSort/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/musicPlayer/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/musicPlayer/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/musicPlayer/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/musicPlayer/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/musicPlayer/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/musicPlayer/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tools/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tools/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tools/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tools/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main/hash/HashTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/main/hash/HashTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +73,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="main" />
       <recent name="main.hash" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -63,7 +83,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SpaceInvaders">
+  <component name="RunManager" selected="JUnit.All in ArcadeGameJavaFX">
     <configuration name="SpaceInvaders" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.SpaceInvaders" />
       <module name="ArcadeGameJavaFX" />
@@ -75,6 +95,14 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.SpaceInvaders" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in ArcadeGameJavaFX" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ArcadeGameJavaFX" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,8 +123,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpaceInvadersTest.sortScoresByDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ArcadeGameJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.SpaceInvadersTest" />
+      <option name="METHOD_NAME" value="sortScoresByDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceInvadersTest.sortScoresByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ArcadeGameJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.SpaceInvadersTest" />
+      <option name="METHOD_NAME" value="sortScoresByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceInvadersTest.sortScoresByScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ArcadeGameJavaFX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.SpaceInvadersTest" />
+      <option name="METHOD_NAME" value="sortScoresByScore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in ArcadeGameJavaFX" />
+        <item itemvalue="JUnit.SpaceInvadersTest.sortScoresByDate" />
+        <item itemvalue="JUnit.SpaceInvadersTest.sortScoresByScore" />
+        <item itemvalue="JUnit.SpaceInvadersTest.sortScoresByName" />
         <item itemvalue="JUnit.HashTest.MD5" />
       </list>
     </recent_temporary>
@@ -135,58 +215,59 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591843408595" />
-    <state width="1877" height="161" key="GridCell.Tab.0.bottom" timestamp="1591947506126">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="407" key="GridCell.Tab.0.bottom" timestamp="1592536015054">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591947506126" />
-    <state width="1877" height="161" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591946090529" />
-    <state width="1877" height="161" key="GridCell.Tab.0.center" timestamp="1591947506126">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="161" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591951188378" />
+    <state width="1877" height="407" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592536015054" />
+    <state width="1877" height="407" key="GridCell.Tab.0.center" timestamp="1592536015054">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591947506126" />
-    <state width="1877" height="161" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591946090528" />
-    <state width="1877" height="161" key="GridCell.Tab.0.left" timestamp="1591947506126">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="161" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591951188378" />
+    <state width="1877" height="407" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592536015054" />
+    <state width="1877" height="407" key="GridCell.Tab.0.left" timestamp="1592536015054">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591947506126" />
-    <state width="1877" height="161" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591946090528" />
-    <state width="1877" height="161" key="GridCell.Tab.0.right" timestamp="1591947506126">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="161" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591951188378" />
+    <state width="1877" height="407" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592536015054" />
+    <state width="1877" height="407" key="GridCell.Tab.0.right" timestamp="1592536015054">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="161" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591947506126" />
-    <state width="1877" height="161" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591946090529" />
-    <state width="1877" height="185" key="GridCell.Tab.1.bottom" timestamp="1591871035919">
+    <state width="1877" height="161" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591951188378" />
+    <state width="1877" height="407" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592536015054" />
+    <state width="1877" height="185" key="GridCell.Tab.1.bottom" timestamp="1592530970526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="186" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
-    <state width="1877" height="185" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state width="1877" height="185" key="GridCell.Tab.1.center" timestamp="1591871035919">
+    <state width="1877" height="185" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592530970526" />
+    <state width="1877" height="185" key="GridCell.Tab.1.center" timestamp="1592530970526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="186" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
-    <state width="1877" height="185" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state width="1877" height="185" key="GridCell.Tab.1.left" timestamp="1591871035919">
+    <state width="1877" height="185" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592530970526" />
+    <state width="1877" height="185" key="GridCell.Tab.1.left" timestamp="1592530970526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="186" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
-    <state width="1877" height="185" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state width="1877" height="185" key="GridCell.Tab.1.right" timestamp="1591871035919">
+    <state width="1877" height="185" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592530970526" />
+    <state width="1877" height="185" key="GridCell.Tab.1.right" timestamp="1592530970526">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="186" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591869602316" />
-    <state width="1877" height="185" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591871035919" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1591835058962">
+    <state width="1877" height="185" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592530970526" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1592533963423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591835058962" />
+    <state x="440" y="94" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592533963423" />
     <state x="-1256" y="412" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591947098729">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1256" y="412" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591947098729" />
-    <state x="-1189" y="326" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1591947060420">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="731" y="326" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592535322859">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1189" y="326" key="com.intellij.testIntegration.createTest.CreateTestDialog/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1591947060420" />
+    <state x="731" y="326" key="com.intellij.testIntegration.createTest.CreateTestDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592535322859" />
     <state x="306" y="118" width="1578" height="999" key="dock-window-1" timestamp="1591941538424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -201,20 +282,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/binarySearch/BinarySearch.java</url>
-          <line>12</line>
+          <line>20</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/lib/jlayer-1.0.1.jar!/javazoom/jl/player/advanced/AdvancedPlayer.class</url>
-          <line>141</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="musicPlayer" />
-        <watch expression="playlist.currentNode.file" />
+        <watch expression="foundIndex" />
       </configuration>
     </watches-manager>
   </component>

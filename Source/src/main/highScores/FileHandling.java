@@ -3,6 +3,14 @@ package main.highScores;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * @author Benjamin Royans
+ * @studentID P205225
+ * @date Friday, 19 June 2020
+ * @program TAFE Invaders
+ * @description Java III Project.
+ */
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.FileChooser;

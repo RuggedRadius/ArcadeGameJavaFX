@@ -1,5 +1,13 @@
-package main;
+/**
+ * @author Benjamin Royans
+ * @studentID P205225
+ * @date Friday, 19 June 2020
+ * @program TAFE Invaders
+ * @description Java III Project.
+ */
 
+
+package main;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -57,7 +65,6 @@ import static main.tools.Settings.*;
 import static main.tools.Utilities.randyMcRando;
 import static main.binarySearch.BinarySearch.binarySearch;
 
-
 public class SpaceInvaders extends Application
 {
     // FX Controls
@@ -89,8 +96,6 @@ public class SpaceInvaders extends Application
     public static Stage stage;
     Canvas gameCanvas;
     private double mouseX;
-
-    // UI Elements
     MusicPlayer musicPlayer;
     HighScoreManager scoreManager;
 
@@ -100,20 +105,23 @@ public class SpaceInvaders extends Application
     boolean paused;
 
     // Sorting
-    @FXML private void sortScoresByName() {
+    @FXML public boolean sortScoresByName() {
         System.out.println("Sorting by name");
         HighScoreManager.highScores = MergeSort.Sort_Names(HighScoreManager.highScores);
         tblHighScores.setItems(HighScoreManager.highScores);
+        return true;
     }
-    @FXML private void sortScoresByScore() {
+    @FXML public boolean sortScoresByScore() {
         System.out.println("Sorting by score");
         HighScoreManager.highScores = MergeSort.Sort_Scores(HighScoreManager.highScores);
         tblHighScores.setItems(HighScoreManager.highScores);
+        return true;
     }
-    @FXML private void sortScoresByDate() {
+    @FXML public boolean sortScoresByDate() {
         System.out.println("Sorting by date");
         HighScoreManager.highScores = MergeSort.Sort_Date(HighScoreManager.highScores);
         tblHighScores.setItems(HighScoreManager.highScores);
+        return true;
     }
 
     // Search
@@ -131,11 +139,10 @@ public class SpaceInvaders extends Application
         // Get key for search
         String key = txtSearch.getText();
 
-
-
         // Get index of key
         int foundIndex = binarySearch(musicFiles, 0, musicFiles.length - 1, key);
 
+        // Determine if song is found
         if (foundIndex >= 0)
         {
             // Select song
