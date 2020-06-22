@@ -31,17 +31,14 @@ public class PlayerShip extends SpaceShip
 
     @Override
     public void explode() {
-        System.out.println("Player destroyed!");
-
+        // Handle explosion
         exploding = true;
         explosionStep = -1;
 
+        // Destroy all on-screen enemies
         SpaceInvaders.destroyAllEnemies();
+
+        // Screen FX
         SpaceInvaders.rumbleScreen();
     }
 }
-
-
-
-// Rumble screen FX
-//                rumbleScreen();

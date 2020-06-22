@@ -26,8 +26,6 @@ public class SpaceShip
 
     // Sprite image
     Image img;
-
-    // ...?
     int explosionStep = 0;
 
     GraphicsContext gc;

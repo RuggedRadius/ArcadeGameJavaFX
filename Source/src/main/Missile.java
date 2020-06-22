@@ -18,7 +18,8 @@ import main.tools.Utilities;
 
 import static main.GameScore.*;
 
-public class Missile {
+public class Missile
+{
     public boolean toRemove;
 
     int posX = 10;
@@ -29,7 +30,7 @@ public class Missile {
 
     Color missileColor;
 
-
+    // Constructor
     public Missile(GraphicsContext _gc, int _posX, int _posY)
     {
         this.posX = _posX;
@@ -39,11 +40,13 @@ public class Missile {
         missileColor = Utilities.randomColour();
     }
 
+    // Called every frame
     public void update()
     {
         posY -= Settings.PLAYER_MISSILE_SPEED;
     }
 
+    // Draw to canvas
     public void draw()
     {
         RadialGradient missileBasic = new RadialGradient(
@@ -102,6 +105,7 @@ public class Missile {
         }
     }
 
+    // Detect collision with other game objects
     public boolean collide (SpaceShip ship)
     {
         int distance = distance(this.posX + size / 2, this.posY + size / 2, ship.posX + ship.size / 2, ship.posY + ship.size / 2);
